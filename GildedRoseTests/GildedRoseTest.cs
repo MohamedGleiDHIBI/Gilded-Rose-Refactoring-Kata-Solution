@@ -43,5 +43,11 @@ namespace GildedRoseTests
             var Item = GenrateItems("Backstage passes to a TAFKAL80ETC concert", 15, 35);
             Assert.AreEqual(36, Item.Quality);
         }
+        [Test]
+        public void GildedRose_QualityIncreaseby2_BackstagePasses10DaysOut()
+        {
+            var Item = GenrateItems("Backstage passes to a TAFKAL80ETC concert", 10, 35);
+            Assert.AreEqual(37, Item.Quality);
+        }
     }
 }
