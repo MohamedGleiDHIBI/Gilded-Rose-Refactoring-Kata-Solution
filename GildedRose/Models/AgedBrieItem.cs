@@ -15,4 +15,5 @@
                 Quality = MaximumQuality;  // Quality ALways Lower Than 50 
         }
     }
+
 }
