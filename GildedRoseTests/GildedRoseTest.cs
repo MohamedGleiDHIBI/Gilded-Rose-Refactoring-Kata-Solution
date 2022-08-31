@@ -25,5 +25,11 @@ namespace GildedRoseTests
             var Item = GenrateItems("Backstage passes to a TAFKAL80ETC concert", 10, 48);
             Assert.AreEqual(50, Item.Quality);
         }
+        [Test]
+        public void GildedRose_QualityIncrease()
+        {
+            var Item = GenrateItems("Aged Brie", 15, 25);
+            Assert.AreEqual(26, Item.Quality);
+        }
     }
 }
