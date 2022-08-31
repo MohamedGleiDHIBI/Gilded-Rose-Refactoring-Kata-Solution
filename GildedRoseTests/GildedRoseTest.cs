@@ -31,5 +31,11 @@ namespace GildedRoseTests
             var Item = GenrateItems("Aged Brie", 15, 25);
             Assert.AreEqual(26, Item.Quality);
         }
+        [Test]
+        public void GildedRose_QualityIncreaseTwice_NegativeSellIn()
+        {
+            var Item = GenrateItems("Aged Brie", -1, 35);
+            Assert.AreEqual(37, Item.Quality);
+        }
     }
 }
