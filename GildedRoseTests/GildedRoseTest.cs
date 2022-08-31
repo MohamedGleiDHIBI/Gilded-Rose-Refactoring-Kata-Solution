@@ -28,8 +28,14 @@ namespace GildedRoseTests
         [Test]
         public void GildedRose_QualityIncrease()
         {
-            var Item = GenrateItems("Aged Brie", 15, 25);
-            Assert.AreEqual(26, Item.Quality);
+            var Item = GenrateItems("Sulfuras, Hand of Ragnaros", 15, 80);
+            Assert.AreEqual(80, Item.Quality);
+        }
+        [Test]
+        public void GildedRose_QualityNeverDecreases()
+        {
+            var Item = GenrateItems("Backstage passes to a TAFKAL80ETC concert", 0, 35);
+            Assert.AreEqual(0, Item.Quality);
         }
         [Test]
         public void GildedRose_QualityIncreaseTwice_NegativeSellIn()
@@ -60,6 +66,12 @@ namespace GildedRoseTests
         {
             var Item = GenrateItems("Backstage passes to a TAFKAL80ETC concert", 0, 35);
             Assert.AreEqual(0, Item.Quality);
+        }
+        [Test]
+        public void GildedRose_QualityDecreases_NegativeSellIN()
+        {
+            var Item = GenrateItems("foo", 0, 35);
+            Assert.AreEqual(33, Item.Quality);
         }
     }
 }
