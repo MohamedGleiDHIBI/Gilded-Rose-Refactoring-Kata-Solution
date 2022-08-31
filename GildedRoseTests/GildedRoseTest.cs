@@ -6,13 +6,24 @@ namespace GildedRoseTests
 {
     public class GildedRoseTest
     {
+        private Item GenrateItems(string name, int sellIn, int quality)
+        {
+            IList<Item> Items = new List<Item> { new Item { Name = name, SellIn = sellIn, Quality = quality } };
+            GildedRose app = new GildedRose(Items);
+            app.UpdateQuality();
+            return Items[0];
+        }
         [Test]
         public void GildedRose_QualityAlwaysPositive()
         {
-            IList<Item> Items = new List<Item> { new Item { Name = "foo", SellIn = 0, Quality = 0 } };
-            GildedRose app = new GildedRose(Items);
-            app.UpdateQuality();
-            Assert.AreEqual(0, Items[0].Quality);
+            var Item = GenrateItems("foo", 0, 0);
+            Assert.AreEqual(0, Item.Quality);
+        }
+        [Test]
+        public void GildedRose_QualityAlwaysLowerThan50()
+        {
+            var Item = GenrateItems("Backstage passes to a TAFKAL80ETC concert", 10, 48);
+            Assert.AreEqual(50, Item.Quality);
         }
     }
 }
