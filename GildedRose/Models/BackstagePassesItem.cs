@@ -1,6 +1,6 @@
 ﻿namespace GildedRoseKata.Models
 {
-    internal class BackstagePassesItem : IUpdateItemsQuality
+    public class BackstagePassesItem : IUpdateItemsQuality
     {
         public override void UpdateQuality()
         {

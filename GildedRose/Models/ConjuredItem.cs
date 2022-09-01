@@ -1,6 +1,6 @@
 ﻿namespace GildedRoseKata.Models
 {
-    internal class ConjuredItem : IUpdateItemsQuality
+    public class ConjuredItem : IUpdateItemsQuality
     {
         public override void UpdateQuality()
         {
