@@ -9,7 +9,10 @@ namespace GildedRoseKata
     {
         public static void Main(string[] args)
         {
-            
+            var builder = new ContainerBuilder();
+            builder.RegisterType<GildedRose>().As<IGildedRose>();
+            var container = builder.Build();
+            container.Resolve<IGildedRose>().Execute();
         }
     }
 }
